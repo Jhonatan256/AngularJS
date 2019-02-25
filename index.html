@@ -1,12 +1,18 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <p>Nothing here {{'yet' + '!'}}</p>
-</body>
-<script src="vista/recursos/angular-17.7.7/angular.js"></script>
+<!doctype html>
+<html lang="es" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>ProyectAngularJS</title>
+    <script src="recursos/angular-1.7.7/angular.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.css" />
+  </head>
+  <body>
+
+    <p>Nothing here {{'yet' + '!'}}</p>
+  <div ng-app class="alert alert-info">
+    <input type="text" ng-modal="dato"/>
+    {{dato}}
+    <input type="button" value="Hello" ng-click="dato='Hola'"/>
+  </div>
+  </body>
 </html>
