@@ -4,15 +4,43 @@
     <meta charset="utf-8">
     <title>ProyectAngularJS</title>
     <script src="recursos/angular-1.7.7/angular.js"></script>
-    <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="recursos/lib/bootstrap-4.2.1-dist/css/bootstrap.css" />
   </head>
-  <body>
-
+  <body ng-app>
     <p>Nothing here {{'yet' + '!'}}</p>
-  <div ng-app class="alert alert-info">
-    <input type="text" ng-modal="dato"/>
-    {{dato}}
-    <input type="button" value="Hello" ng-click="dato='Hola'"/>
-  </div>
+    <p>{{1+1}}</p>
+    <div ng-app class="alert alert-info">
+      <input type="text" ng-modal="dato"/>
+      <input type="text" ng-model="valor"/>
+      {{dato}}
+      {{(valor == dato ? 1 : 2)}}
+      <input type="button" value="Hello" ng-click="busqueda"/>
+    </div>
+    <div  ng-app ng-init="miArrayDatos = ['ejemploControlador'];">
+      <h2>Menú</h2>
+      <p ng-repeat="elemento in miArrayDatos" ng-init="paso=$index;">
+        <span>({{paso}})</span> : <a href="{{elemento+'.html'}}">{{elemento}}</a>
+      </p>
+    <!-- {{miArrayDatos}} -->
+    </div>
+    <div class="row">
+      <div class="col-3">
+
+      </div>
+      <div ng-app ng-init="pensamientos = [];" class="col-6">
+        <h1>Prueba Arreglo</h1>
+        <p>Input data: <br/>
+          <input type="text" class="form-control m-1" ng-model="nuevoPensamiento"/>
+          <input type="button" class="btn btn-info btn-sm m-1" value="Agregar" ng-click="pensamientos.push(nuevoPensamiento); nuevoPensamiento = '';"/>
+        </p>
+        <h2>Mapear arreglo</h2>
+        <p class="form mb-5 pb-5" ng-repeat="pensamiento in pensamientos;" ng-init="paso = $index;">
+          Pensamiento: {{pensamiento}} Iteración: {{paso}}
+        </p>
+      </div>
+      <div class="col-3">
+        {{angular.module('appAngular', []);}}
+      </div>
+    </div>
   </body>
 </html>

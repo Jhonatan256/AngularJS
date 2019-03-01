@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es" ng-app="MyFirstApp">
+  <head>
+    <meta charset="utf-8">
+    <title>EjemploControlador</title>
+    <script src="recursos/angular-1.7.7/angular.js"></script>
+    <!-- <script src="recursos/angular-1.7.7/angular-route.js"></script> -->
+    <link rel="stylesheet" href="recursos/lib/bootstrap-4.2.1-dist/css/bootstrap.css" />
+    <script src="controller/ccontroller.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-2">
+
+      </div>
+      <div class="col-4 alert alert-info col-sm-12" ng-controller="FirstController">
+        <input type="text" class="btn" ng-model="name" name="nombre" value=""/>
+        {{"Prueba de texto:"+ name}}
+      </div>
+      <div class="col-4 alert alert-info col-sm-12" ng-controller="SecondController as referencia">
+        {{"Hi"+ referencia.name}}
+      </div>
+      <div class="col-2 col-sm-12" ng-controller="TercerController">
+        <ul>
+          <li ng-repeat="comentario in comentarios">
+            <h2>{{comentario.comentario}} <stron>{{comentario.username}}</stron></h2>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
