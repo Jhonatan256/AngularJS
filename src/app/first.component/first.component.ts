@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component ({
   selector : 'app-prueba',
-  template : '<h2>work work</h2>',
+  templateUrl : './first.component.html',
   styles : ['h2{color:red;}']
 })
 
